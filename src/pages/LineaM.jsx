@@ -30,7 +30,7 @@ const LineaM = () => {
   useEffect(() => {
     const fetchLineaM = async () => {
       try {
-        const response = await axios.get('http://localhost:5173/lineam');
+        const response = await axios.get('http://localhost:5173/lineaM');
         setLineaM(response.data)
       } catch (error) {
         console.log(error);
@@ -69,7 +69,7 @@ const LineaM = () => {
     });
 
     try {
-      await axios.post('http://localhost:5173/lineam', datosM);
+      await axios.post('http://localhost:5173/lineaM', datosM);
       setAnimarModal(true);
     } catch (error) {
       console.log(error);
@@ -83,7 +83,7 @@ const LineaM = () => {
 
   const deleteId = async (id) => {
     try {
-      await axios.delete('http://localhost:5173/lineam/' + id);
+      await axios.delete('http://localhost:5173/lineaM/' + id);
       window.location.reload();
     } catch (error) {
       console.log(error);
@@ -142,7 +142,7 @@ const LineaM = () => {
         </tbody>
       </table>
     </div>
-    <CSVLink data={lineaM} headers={headers} filename={`linea H ${(new Date().toDateString())}`} separator=';' className='bg-green-600 hover:bg-green-800 py-2 px-3 text-white font-bold rounded-md'>Export to Excel</CSVLink>
+    <CSVLink data={lineaM} headers={headers} filename={`linea M ${(new Date().toDateString())}`} separator=';' className='bg-green-600 hover:bg-green-800 py-2 px-3 text-white font-bold rounded-md'>Export to Excel</CSVLink>
   </>
   )
 }
