@@ -19,7 +19,7 @@ const routes = createBrowserRouter([
         element: <Index />
       },
       {
-        path: '/lineam',
+        path: '/lineaM',
         element: <LineaM />
       },
       {
