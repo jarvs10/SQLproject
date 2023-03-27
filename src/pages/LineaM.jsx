@@ -8,7 +8,7 @@ import {CSVLink} from "react-csv";
 const LineaM = () => {
 
   const headers = [
-    { label: "Fecha", key: "fecha" },
+    // { label: "Fecha", key: "fecha" },
     { label: "Estacion", key: "estacion" },
     { label: "Funcionario", key: "funcionario" },
     { label: "Linea", key: "linea" },
@@ -25,17 +25,7 @@ const LineaM = () => {
 
   const [error, setError] = useState(false);
 
-  const [datosM, setDatosM] = useState({
-    fecha: '',
-    linea: '',
-    estacion: '',
-    funcionario: '',
-    horario: '',
-    lorry: '',
-    sonda1: '',
-    sonda2: '',
-    presion: ''
-  });
+  const [datosM, setDatosM] = useState({});
 
   useEffect(() => {
     const fetchLineaM = async () => {
@@ -56,7 +46,7 @@ const LineaM = () => {
   const handleSubmit = async e => {
     e.preventDefault();
 
-    if ([datosM.linea, datosM.fecha, datosM.estacion, datosM.funcionario, datosM.lorry, datosM.sonda1, datosM.sonda2, datosM.presion, datosM.horario].includes('')) {
+    if ([datosM.linea, datosM.estacion, datosM.funcionario, datosM.lorry, datosM.sonda1, datosM.sonda2, datosM.presion, datosM.horario].includes('')) {
       setError(true);
       console.log('todos los campos son necesarios');
 
@@ -75,7 +65,6 @@ const LineaM = () => {
     }
 
     setDatosM({
-      fecha: '',
       linea: '',
       estacion: '',
       funcionario: '',
