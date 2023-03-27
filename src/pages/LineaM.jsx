@@ -57,13 +57,6 @@ const LineaM = () => {
       return;
     }
 
-    try {
-      await axios.post('http://localhost:5173/lineam', datosM);
-      setAnimarModal(true);
-    } catch (error) {
-      console.log(error);
-    }
-
     setDatosM({
       linea: '',
       estacion: '',
@@ -74,6 +67,13 @@ const LineaM = () => {
       sonda2: '',
       presion: ''
     });
+
+    try {
+      await axios.post('http://localhost:5173/lineam', datosM);
+      setAnimarModal(true);
+    } catch (error) {
+      console.log(error);
+    }
 
     setTimeout(() => {
       window.location.reload();
