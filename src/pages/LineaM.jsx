@@ -95,7 +95,7 @@ const LineaM = () => {
     <>
     <h1 className='text-4xl text-center font-black mb-5'>Central De Tension Linea M -- MYSQL</h1>
 
-    <div className='bg-white shadow rounded-md md:w-3/4 mx-auto py-10 px-5 mb-20'>
+    <div className='bg-white shadow-xl rounded-md md:w-3/4 mx-auto py-10 px-5 mb-20'>
 
       <h2 className='font-black mb-10 text-3xl text-center'>Registro de Datos</h2>
 
@@ -115,7 +115,7 @@ const LineaM = () => {
     <div className='mb-11'>
       <h2 className='text-3xl font-bold mb-8 text-center'>Datos Central de Tension Linea M</h2>
 
-      <table className='w-full bg-white shadow mt-5 table-auto'>
+      <table className='w-full bg-white shadow-xl mt-5 table-auto'>
         <thead className='bg-green-600 text-white'>
           <tr>
             <th className='p-2 text-lg'>Estacion</th>
