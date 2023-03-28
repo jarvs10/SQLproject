@@ -30,21 +30,6 @@ const Formulario = ({ datosH, handleChange, handleSubmit, animarModal }) => {
         </select>
       </div>
 
-      {/* <div className="mb-4">
-        <label
-          className="text-gray-800 font-semibold"
-          htmlFor="fecha"
-        >Fecha:</label>
-        <input
-          id="fecha"
-          type="date"
-          className="mt-2 block w-full p-3 bg-gray-200"
-          name="fecha"
-          value={fecha}
-          onChange={handleChange}
-        />
-      </div> */}
-
       <div className="mb-4">
         <label
           className="text-gray-800 font-semibold"

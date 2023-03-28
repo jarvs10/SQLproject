@@ -65,7 +65,7 @@ const UpdateIdM = () => {
     }
 
     try {
-      await axios.put('http://localhost:5173/lineam/' + lineamId, datosM);
+      await axios.put('http://localhost:5173/lineaM/' + lineamId, datosM);
       setAnimarModal(true);
     } catch (error) {
       console.log(error);
@@ -73,7 +73,7 @@ const UpdateIdM = () => {
 
     setTimeout(() => {
       setAnimarModal(false);
-      navigate('/lineam');
+      navigate('/lineaM');
       setIdH('');
     }, 3000);
   }

@@ -4,9 +4,7 @@ import Error from '../components/Error';
 import TableM from '../components/TableM';
 import FormularioM from '../components/FormularioM';
 import {CSVLink} from "react-csv";
-import { useNavigate } from 'react-router-dom';
-
-const navigate = useNavigate();
+import { redirect } from 'react-router-dom';
 
 const LineaM = () => {
 
@@ -79,7 +77,7 @@ const LineaM = () => {
     }
 
     setTimeout(() => {
-      navigate('/lineaM');
+      window.location.reload();
       setAnimarModal(false);
     }, 3000);
   }
@@ -87,7 +85,7 @@ const LineaM = () => {
   const deleteId = async (id) => {
     try {
       await axios.delete('http://localhost:5173/lineaM/' + id);
-      navigate('/lineaM');
+      window.location.reload();
     } catch (error) {
       console.log(error);
     }

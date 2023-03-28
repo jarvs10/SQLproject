@@ -46,7 +46,9 @@ const Index = () => {
   const handleSubmit = async e => {
     e.preventDefault();
 
-    if ([datosH.linea, datosH.estacion, datosH.funcionario, datosH.lorry, datosH.sonda1, datosH.sonda2, datosH.presion, datosH.horario].includes('')) {
+    const {linea, estacion, funcionario, lorry, sonda1, sonda2, presion, horario} = datosH
+
+    if ([linea, estacion, funcionario, lorry, sonda1, sonda2, presion, horario].includes('')) {
       setError(true);
       console.log('todos los campos son necesarios');
 
