@@ -3,7 +3,7 @@ import axios from 'axios';
 import TableH from '../components/TableH';
 import Formulario from '../components/Formulario';
 import Error from '../components/Error';
-import {CSVLink} from "react-csv";
+import { CSVLink } from "react-csv";
 
 const Index = () => {
 
@@ -46,7 +46,7 @@ const Index = () => {
   const handleSubmit = async e => {
     e.preventDefault();
 
-    const {linea, estacion, funcionario, lorry, sonda1, sonda2, presion, horario} = datosH
+    const { linea, estacion, funcionario, lorry, sonda1, sonda2, presion, horario } = datosH
 
     if ([linea, estacion, funcionario, lorry, sonda1, sonda2, presion, horario].includes('')) {
       setError(true);

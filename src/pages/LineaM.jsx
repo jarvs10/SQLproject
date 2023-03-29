@@ -3,7 +3,7 @@ import axios from 'axios'
 import Error from '../components/Error';
 import TableM from '../components/TableM';
 import FormularioM from '../components/FormularioM';
-import {CSVLink} from "react-csv";
+import { CSVLink } from "react-csv";
 import { redirect } from 'react-router-dom';
 
 const LineaM = () => {
@@ -93,58 +93,58 @@ const LineaM = () => {
 
   return (
     <>
-    <h1 className='text-4xl text-center font-black mb-5'>Central De Tension Linea M -- MYSQL</h1>
+      <h1 className='text-4xl text-center font-black mb-5'>Central De Tension Linea M -- MYSQL</h1>
 
-    <div className='bg-white shadow-xl rounded-md md:w-3/4 mx-auto py-10 px-5 mb-20'>
+      <div className='bg-white shadow-xl rounded-md md:w-3/4 mx-auto py-10 px-5 mb-20'>
 
-      <h2 className='font-black mb-10 text-3xl text-center'>Registro de Datos</h2>
+        <h2 className='font-black mb-10 text-3xl text-center'>Registro de Datos</h2>
 
-      <FormularioM
-        datosM={datosM}
-        handleChange={handleChange}
-        handleSubmit={handleSubmit}
-        animarModal={animarModal}
-      />
+        <FormularioM
+          datosM={datosM}
+          handleChange={handleChange}
+          handleSubmit={handleSubmit}
+          animarModal={animarModal}
+        />
 
-      {
-        error && <Error>Todos los campos son necesarios</Error>
-      }
+        {
+          error && <Error>Todos los campos son necesarios</Error>
+        }
 
-    </div>
+      </div>
 
-    <div className='mb-11'>
-      <h2 className='text-3xl font-bold mb-8 text-center'>Datos Central de Tension Linea M</h2>
+      <div className='mb-11'>
+        <h2 className='text-3xl font-bold mb-8 text-center'>Datos Central de Tension Linea M</h2>
 
-      <table className='w-full bg-white shadow-xl mt-5 table-auto'>
-        <thead className='bg-green-600 text-white'>
-          <tr>
-            <th className='p-2 text-lg'>Estacion</th>
-            <th className='p-2 text-lg'>Linea</th>
-            <th className='p-2 text-lg'>Funcionario</th>
-            <th className='p-2 text-lg'>Horario</th>
-            <th className='p-2 text-lg'>Desplazamiento Lorry</th>
-            <th className='p-2 text-lg'>Sonda 1</th>
-            <th className='p-2 text-lg'>Sonda 2</th>
-            <th className='p-2 text-lg'>Presion</th>
-            <th className='p-2 text-lg'>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          {lineaM.map(list => {
-            return (
-              <TableM
-                key={list.id}
-                list={list}
-                deleteId={deleteId}
-              />
-            )
-          })
-          }
-        </tbody>
-      </table>
-    </div>
-    <CSVLink data={lineaM} headers={headers} filename={`linea M ${(new Date().toDateString())}`} separator=';' className='bg-green-600 hover:bg-green-800 py-2 px-3 text-white font-bold rounded-md'>Export to Excel</CSVLink>
-  </>
+        <table className='w-full bg-white shadow-xl mt-5 table-auto'>
+          <thead className='bg-green-600 text-white'>
+            <tr>
+              <th className='p-2 text-lg'>Estacion</th>
+              <th className='p-2 text-lg'>Linea</th>
+              <th className='p-2 text-lg'>Funcionario</th>
+              <th className='p-2 text-lg'>Horario</th>
+              <th className='p-2 text-lg'>Desplazamiento Lorry</th>
+              <th className='p-2 text-lg'>Sonda 1</th>
+              <th className='p-2 text-lg'>Sonda 2</th>
+              <th className='p-2 text-lg'>Presion</th>
+              <th className='p-2 text-lg'>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            {lineaM.map(list => {
+              return (
+                <TableM
+                  key={list.id}
+                  list={list}
+                  deleteId={deleteId}
+                />
+              )
+            })
+            }
+          </tbody>
+        </table>
+      </div>
+      <CSVLink data={lineaM} headers={headers} filename={`linea M ${(new Date().toDateString())}`} separator=';' className='bg-green-600 hover:bg-green-800 py-2 px-3 text-white font-bold rounded-md'>Export to Excel</CSVLink>
+    </>
   )
 }
 
