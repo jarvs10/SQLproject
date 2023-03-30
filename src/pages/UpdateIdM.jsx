@@ -12,7 +12,6 @@ const UpdateIdM = () => {
   const [error, setError] = useState(false);
 
   const [datosM, setDatosM] = useState({
-    // fecha: '',
     linea: '',
     funcionario: '',
     estacion: '',

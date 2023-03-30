@@ -9,7 +9,6 @@ import { redirect } from 'react-router-dom';
 const LineaM = () => {
 
   const headers = [
-    // { label: "Fecha", key: "fecha" },
     { label: "Estacion", key: "estacion" },
     { label: "Funcionario", key: "funcionario" },
     { label: "Linea", key: "linea" },
@@ -26,7 +25,16 @@ const LineaM = () => {
 
   const [error, setError] = useState(false);
 
-  const [datosM, setDatosM] = useState({});
+  const [datosM, setDatosM] = useState({
+    linea: '',
+    funcionario: '',
+    estacion: '',
+    horario: '',
+    lorry: '',
+    sonda1: '',
+    sonda2: '',
+    presion: ''
+  });
 
   useEffect(() => {
     const fetchLineaM = async () => {

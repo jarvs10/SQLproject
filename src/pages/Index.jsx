@@ -25,7 +25,16 @@ const Index = () => {
 
   const [error, setError] = useState(false);
 
-  const [datosH, setDatosH] = useState({});
+  const [datosH, setDatosH] = useState({
+    linea: '',
+    funcionario: '',
+    estacion: '',
+    horario: '',
+    lorry: '',
+    sonda1: '',
+    sonda2: '',
+    presion: ''
+  });
 
   useEffect(() => {
     const fetchLineaH = async () => {
@@ -60,7 +69,6 @@ const Index = () => {
     }
 
     setDatosH({
-      // fecha: '',
       linea: '',
       funcionario: '',
       estacion: '',
