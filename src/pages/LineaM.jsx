@@ -101,7 +101,7 @@ const LineaM = () => {
 
   return (
     <>
-      <h1 className='text-4xl text-center font-black mb-5'>Central De Tension Linea M -- MYSQL</h1>
+      <h1 className='text-4xl text-center font-black mb-10'>Central De Tension Linea M -- MYSQL</h1>
 
       <div className='bg-white shadow-xl rounded-md md:w-3/4 mx-auto py-10 px-5 mb-20'>
 
