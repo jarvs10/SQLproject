@@ -9,6 +9,7 @@ const LineaM = () => {
 
   const headers = [
     { label: "Estacion", key: "estacion" },
+    { label: "Fecha", key: "fecha" },
     { label: "Funcionario", key: "funcionario" },
     { label: "Linea", key: "linea" },
     { label: "Horario", key: "horario" },
@@ -24,8 +25,11 @@ const LineaM = () => {
 
   const [error, setError] = useState(false);
 
+  const [currentPage, setCurrentPage] = useState(0)
+
   const [datosM, setDatosM] = useState({
     linea: '',
+    fecha: '',
     funcionario: '',
     estacion: '',
     horario: '',
@@ -34,6 +38,23 @@ const LineaM = () => {
     sonda2: '',
     presion: ''
   });
+
+  const filteredData = () => {
+
+    return lineaM.slice(currentPage, currentPage + 4);
+  }
+
+  const nextPage = () => {
+    if (currentPage >= 0) {
+      setCurrentPage(currentPage + 4)
+    }
+  }
+
+  const prevPage = () => {
+    if (currentPage > 0) {
+      setCurrentPage(currentPage - 4)
+    }
+  }
 
   useEffect(() => {
     const fetchLineaM = async () => {
@@ -54,7 +75,7 @@ const LineaM = () => {
   const handleSubmit = async e => {
     e.preventDefault();
 
-    if ([datosM.linea, datosM.estacion, datosM.funcionario, datosM.lorry, datosM.sonda1, datosM.sonda2, datosM.presion, datosM.horario].includes('')) {
+    if ([datosM.linea, datosM.fecha, datosM.estacion, datosM.funcionario, datosM.lorry, datosM.sonda1, datosM.sonda2, datosM.presion, datosM.horario].includes('')) {
       setError(true);
       console.log('todos los campos son necesarios');
 
@@ -67,8 +88,9 @@ const LineaM = () => {
 
     setDatosM({
       linea: '',
-      estacion: '',
+      fecha: '',
       funcionario: '',
+      estacion: '',
       horario: '',
       lorry: '',
       sonda1: '',
@@ -100,7 +122,7 @@ const LineaM = () => {
 
   return (
     <>
-      <h1 className='text-4xl text-center font-black mb-10'>Central De Tension Linea M -- MYSQL</h1>
+      <h1 className='text-4xl text-center font-black mb-10'>Central De Tension Linea M - MYSQL</h1>
 
       <div className='bg-white shadow-xl rounded-md md:w-3/4 mx-auto py-10 px-5 mb-20'>
 
@@ -119,7 +141,7 @@ const LineaM = () => {
 
       </div>
 
-      <div className='mb-11'>
+      <div className='mb-5'>
         <h2 className='text-3xl font-bold mb-8 text-center'>Datos Central de Tension Linea M</h2>
 
         <table className='w-full bg-white shadow-xl mt-5 table-auto'>
@@ -127,9 +149,10 @@ const LineaM = () => {
             <tr>
               <th className='p-2 text-lg'>Estacion</th>
               <th className='p-2 text-lg'>Linea</th>
+              <th className='p-2 text-lg'>fecha</th>
               <th className='p-2 text-lg'>Funcionario</th>
               <th className='p-2 text-lg'>Horario</th>
-              <th className='p-2 text-lg'>Desplazamiento Lorry</th>
+              <th className='p-2 text-lg'>Lorry</th>
               <th className='p-2 text-lg'>Sonda 1</th>
               <th className='p-2 text-lg'>Sonda 2</th>
               <th className='p-2 text-lg'>Presion</th>
@@ -137,7 +160,7 @@ const LineaM = () => {
             </tr>
           </thead>
           <tbody>
-            {lineaM.map(list => {
+            {filteredData().map(list => {
               return (
                 <TableM
                   key={list.id}
@@ -150,6 +173,12 @@ const LineaM = () => {
           </tbody>
         </table>
       </div>
+
+      <div className='flex mb-8 gap-4'>
+        <button onClick={prevPage} className='bg-green-600 hover:bg-green-800 text-white font-bold py-3 px-5 rounded-lg'>Anterior</button>
+        <button onClick={nextPage} className='bg-green-600 hover:bg-green-800 text-white font-bold py-3 px-5 rounded-lg'>Siguiente</button>
+      </div>
+
       <CSVLink data={lineaM} headers={headers} filename={`linea M ${(new Date().toDateString())}`} separator=';' className='bg-green-600 hover:bg-green-800 py-2 px-3 text-white font-bold rounded-md'>Export to Excel</CSVLink>
     </>
   )

@@ -18,12 +18,12 @@ const Layout = () => {
               to='/'>Linea H</Link>
             <Link className={`${location.pathname === '/lineaM' ? 'text-black' : ' text-white'} block font-bold text-2xl hover:text-black mb-4`}
               to='/lineaM'>Linea M</Link>
+            {/* <Link className={`${location.pathname === '/registro/nuevo' ? 'text-black' : ' text-white'} block font-bold text-2xl hover:text-black mb-4`}
+              to='/lineaM'>Linea K</Link>
             <Link className={`${location.pathname === '/registro/nuevo' ? 'text-black' : ' text-white'} block font-bold text-2xl hover:text-black mb-4`}
-            to='/lineaM'>Linea K</Link>
-          <Link className={`${location.pathname === '/registro/nuevo' ? 'text-black' : ' text-white'} block font-bold text-2xl hover:text-black mb-4`}
-            to='/lineaM'>Linea J</Link>
-          <Link className={`${location.pathname === '/registro/nuevo' ? 'text-black' : ' text-white'} block font-bold text-2xl hover:text-black mb-4`}
-            to='/lineaM'>Linea L</Link>
+              to='/lineaM'>Linea J</Link>
+            <Link className={`${location.pathname === '/registro/nuevo' ? 'text-black' : ' text-white'} block font-bold text-2xl hover:text-black mb-4`}
+              to='/lineaM'>Linea L</Link> */}
           </nav>
         </div>
 

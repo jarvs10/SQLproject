@@ -4,7 +4,7 @@ import { EditarContextH } from '../context/EditarContextHProvider';
 
 const TableM = ({list, deleteId}) => {
 
-  const {estacion, linea, funcionario, lorry, sonda1, sonda2, presion, horario, id} = list;
+  const {estacion, fecha, linea, funcionario, lorry, sonda1, sonda2, presion, horario, id} = list;
 
   const [idH, setIdH] = useContext(EditarContextH);
 
@@ -17,6 +17,10 @@ const TableM = ({list, deleteId}) => {
 
         <td className='p-6 text-center'>
           <p className='text-1xl text-gray-400 font-semibold'>{linea}</p>
+        </td>
+
+        <td className='p-6 text-center'>
+          <p className='text-1xl text-gray-400 font-semibold'>{fecha}</p>
         </td>
 
         <td className='p-6 text-center'>
