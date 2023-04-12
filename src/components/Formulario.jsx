@@ -4,7 +4,7 @@ import Modal from './Modal';
 
 const Formulario = ({ datosH, handleChange, handleSubmit, animarModal }) => {
 
-  const { linea, estacion, horario, lorry, sonda1, sonda2, presion, funcionario } = datosH;
+  const { linea, fecha, estacion, horario, lorry, sonda1, sonda2, presion, funcionario } = datosH;
 
   const [idH] = useContext(EditarContextH);
 
@@ -28,6 +28,21 @@ const Formulario = ({ datosH, handleChange, handleSubmit, animarModal }) => {
           <option value="Linea K">Linea K</option>
           <option value="Linea L">Linea L</option> */}
         </select>
+      </div>
+
+      <div className="mb-4">
+        <label
+          className="text-gray-800 font-semibold"
+          htmlFor="fecha"
+        >Fecha:</label>
+        <input
+          id="fecha"
+          type="date"
+          className="mt-2 block w-full p-3 bg-gray-200"
+          name="fecha"
+          value={fecha}
+          onChange={handleChange}
+        />
       </div>
 
       <div className="mb-4">

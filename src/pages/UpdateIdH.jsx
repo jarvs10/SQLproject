@@ -13,6 +13,7 @@ const UpdateIdH = () => {
 
   const [datosH, setDatosH] = useState({
     linea: '',
+    fecha: '',
     funcionario: '',
     estacion: '',
     horario: '',
@@ -34,6 +35,7 @@ const UpdateIdH = () => {
     if (idH !== '') {
       setDatosH({
         linea: idH.linea,
+        fecha: idH.fecha,
         funcionario: idH.funcionario,
         estacion: idH.estacion,
         horario: idH.horario,
@@ -52,7 +54,7 @@ const UpdateIdH = () => {
   const handleSubmit = async e => {
     e.preventDefault();
 
-    if ([datosH.linea, datosH.estacion, datosH.funcionario, datosH.lorry, datosH.sonda1, datosH.sonda2, datosH.presion, datosH.horario].includes('')) {
+    if ([datosH.linea, datosH.fecha, datosH.estacion, datosH.funcionario, datosH.lorry, datosH.sonda1, datosH.sonda2, datosH.presion, datosH.horario].includes('')) {
       setError(true);
       console.log('todos los campos son necesarios');
 
